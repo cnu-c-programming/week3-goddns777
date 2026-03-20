@@ -1,4 +1,4 @@
-#include#include <stdio.h>
+#include <stdio.h>
 #include <stdarg.h>
 
 void my_sum(char type, int count, ...){
@@ -6,6 +6,7 @@ void my_sum(char type, int count, ...){
     va_start(ap, count);
 
     int sum = 0;
+    
     if(type == 'S'){
         for(int i = 0; i < count; i++){
             printf("%s ", va_arg(ap, char*));
@@ -13,15 +14,14 @@ void my_sum(char type, int count, ...){
         printf("\n");
     }
     else if(type == 'C'){
-        for(int i = 0; i < count; i++){ 
+        for(int i = 0; i < count; i++){
             printf("%c", (char)va_arg(ap, int));
         }
         printf("\n");
     }
     else if(type == 'D'){
         for(int i = 0; i < count; i++){
-            int num = va_arg(ap, int);
-            sum += num;
+            sum += va_arg(ap, int);
         }
         printf("%d\n", sum);
     }

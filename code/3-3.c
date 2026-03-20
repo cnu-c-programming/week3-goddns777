@@ -15,4 +15,7 @@ int average(int count, ...){
 
 int main(){
     printf("%d\n", average(3, 10, 20, 30));
-   
+    printf("%d\n", average(5, 10, 20, 30, 40, 50));
+
+    return 0;
+}

@@ -1,10 +1,11 @@
-#include <stdio.h>
+#include#include <stdio.h>
 #include <stdarg.h>
 
 void my_sum(char type, int count, ...){
     va_list ap;
     va_start(ap, count);
 
+    int sum = 0;
     if(type == 'S'){
         for(int i = 0; i < count; i++){
             printf("%s ", va_arg(ap, char*));
@@ -18,7 +19,6 @@ void my_sum(char type, int count, ...){
         printf("\n");
     }
     else if(type == 'D'){
-        int sum = 0;
         for(int i = 0; i < count; i++){
             int num = va_arg(ap, int);
             sum += num;
